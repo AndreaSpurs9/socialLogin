@@ -6,11 +6,18 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import {GooglePlus} from "@ionic-native/google-plus";
+import { Facebook } from '@ionic-native/facebook';
+import {GooglePage} from "../pages/google/google";
+import {FacebookPage} from "../pages/facebook/facebook";
+
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    GooglePage,
+    FacebookPage
   ],
   imports: [
     BrowserModule,
@@ -19,10 +26,15 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    GooglePage,
+    FacebookPage
   ],
   providers: [
     StatusBar,
+    Facebook,
+    GooglePlus,
+
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

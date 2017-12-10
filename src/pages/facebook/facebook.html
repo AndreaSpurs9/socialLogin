@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Facebook Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="isLoggedIn; else facebookLogin">
+    <h2>Ciao, {{users.name}} ({{users.email}})</h2>
+    <p>
+      Gender: {{users.gender}}
+    </p>
+    <p>
+      <img src="{{users.picture.data.url}}" width="100" alt="{{users.name}}" />
+    </p>
+    <p>
+      <button ion-button icon-right (click)="logout()">
+        Logout
+      </button>
+    </p>
+  </div>
+  <ng-template #facebookLogin>
+    <h1>Effettua il login per visualizzare le tue informazioni</h1>
+    <button ion-button icon-right (click)="login()">
+      Login con Facebook
+      <ion-icon name="logo-facebook"></ion-icon>
+    </button>
+  </ng-template>
+</ion-content>
